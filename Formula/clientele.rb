@@ -3,8 +3,8 @@ class Clientele < Formula
 
   desc "The Python API Client Generator for FastAPI, Django REST Framework, and Django Ninja"
   homepage "https://phalt.github.io/clientele/"
-  url "https://files.pythonhosted.org/packages/e2/98/6b2db2f3fb52821f93f628458c55df6af7037354dee11cc6ad43ae152e3e/clientele-1.0.1.tar.gz"
-  sha256 "80a438a9ed105d1263e96f4d0bceccf026d63752d7882a6549acfc6370912750"
+  url "https://files.pythonhosted.org/packages/6b/83/e9617f59a77fbe49845cbd828ca062b7a77565fa7ff6ffe0455455c9c228/clientele-1.1.0.tar.gz"
+  sha256 "e861f9f25b31a2711b2242e65b18bcd131bfa9bfc1593e8fee88dd544193a7bf"
   license "MIT"
 
   depends_on "python@3.12"
