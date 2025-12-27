@@ -145,10 +145,13 @@ class Clientele < Formula
   end
 
   def install
-    # Create virtualenv and install all dependencies
-    # Use binary wheels for all packages to avoid build issues with Rust/C extensions
+    # Create virtualenv
     venv = virtualenv_create(libexec, "python3.12")
-    venv.pip_install resources
+
+    # Install dependencies using binary wheels where available
+    # Homebrew's venv.pip_install forces --no-binary :all: which breaks Rust packages
+    # Use system pip directly without --no-binary to allow binary wheels
+    system libexec/"bin/pip", "install", *resources.map(&:cached_download)
     venv.pip_install_and_link buildpath
   end
 
