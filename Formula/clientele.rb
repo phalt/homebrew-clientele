@@ -8,6 +8,7 @@ class Clientele < Formula
   license "MIT"
 
   depends_on "python@3.12"
+  depends_on "rust" => :build  # Required for pydantic-core and ruff
 
   resource "MarkupSafe" do
     url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
@@ -145,14 +146,7 @@ class Clientele < Formula
   end
 
   def install
-    # Create virtualenv
-    venv = virtualenv_create(libexec, "python3.12")
-
-    # Install dependencies using binary wheels where available
-    # Homebrew's venv.pip_install forces --no-binary :all: which breaks Rust packages
-    # Use system pip directly without --no-binary to allow binary wheels
-    system libexec/"bin/pip", "install", *resources.map(&:cached_download)
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources
   end
 
   test do
