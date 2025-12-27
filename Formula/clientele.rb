@@ -3,8 +3,8 @@ class Clientele < Formula
 
   desc "The Python API Client Generator for FastAPI, Django REST Framework, and Django Ninja"
   homepage "https://phalt.github.io/clientele/"
-  url "https://files.pythonhosted.org/packages/7d/39/3b866a87292c2cdc9a208b03940724f8e2dbb685fbe52be5d533cb098fb2/clientele-1.0.0.tar.gz"
-  sha256 "7f6935c26b3f564823240ec99cfa21b063ad9ff7dd57a38137a31469eb4b28f6"
+  url "https://files.pythonhosted.org/packages/e2/98/6b2db2f3fb52821f93f628458c55df6af7037354dee11cc6ad43ae152e3e/clientele-1.0.1.tar.gz"
+  sha256 "80a438a9ed105d1263e96f4d0bceccf026d63752d7882a6549acfc6370912750"
   license "MIT"
 
   depends_on "python@3.12"
@@ -108,6 +108,21 @@ class Clientele < Formula
   resource "pydantic-core" do
     url "https://files.pythonhosted.org/packages/71/70/23b021c950c2addd24ec408e9ab05d59b035b39d97cdc1130e1bce647bb6/pydantic_core-2.41.5.tar.gz"
     sha256 "08daa51ea16ad373ffd5e7606252cc32f07bc72b28284b6bc9c6df804816476e"
+  end
+
+  resource "pydantic-settings" do
+    url "https://files.pythonhosted.org/packages/43/4b/ac7e0aae12027748076d72a8764ff1c9d82ca75a7a52622e67ed3f765c54/pydantic_settings-2.12.0.tar.gz"
+    sha256 "005538ef951e3c2a68e1c08b292b5f2e71490def8589d4221b95dab00dafcfd0"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
+    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+  end
+
+  resource "python-dotenv" do
+    url "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz"
+    sha256 "42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6"
   end
 
   resource "pyyaml" do
